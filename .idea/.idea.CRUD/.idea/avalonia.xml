@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Principal/App.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Control/LeftBar.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Control/SidePanel.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Control/SidePanel/ButtonSidePanel.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Control/SidePanel/SidePanel.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Control/SidePanelControl/ButtonSidePanel.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Control/SidePanelControl/SidePanel.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/MainWindow.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Principal.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/View/Home.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/View/SidePanel/ButtonSidePanel.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/View/SidePanel/SidePanel.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/View/Studant.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/View/Student.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/View/User.axaml" value="Principal/Principal.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

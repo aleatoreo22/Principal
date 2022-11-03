@@ -1,0 +1,50 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:principal="clr-namespace:Principal"
+        xmlns:sidePanel="using:Principal.Control.SidePanel"
+        xmlns:view="using:Principal.View"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" 
+        x:Class="Principal.MainWindow"
+        Title="Principal">
+    <SplitView IsPaneOpen="True"
+               DisplayMode="Inline"
+               OpenPaneLength="150"
+               Name="SplitView1">
+            <SplitView.Pane>
+                <StackPanel Name="SidePanel">
+                </StackPanel>   
+            </SplitView.Pane>
+                <Grid Name="GridTela"
+                      ColumnDefinitions="Auto,*" 
+                      RowDefinitions="Auto,*"
+                      >
+                    
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Background="#171717"
+                    />
+                    
+                    <Button Name="BtnSidePanelOpen" 
+                            Click="BtnSidePanelOpen_OnClick"
+                            Background="#00000000"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Foreground="Gray"
+                            Margin="2,2,2,2">
+                        ←
+                    </Button>
+                    
+                    <StackPanel Name="Page"
+                                Grid.Row="1" 
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Background="#f5f5f5"
+                                VerticalAlignment="Stretch"
+                                HorizontalAlignment="Stretch"/>
+                    
+                </Grid>    
+        </SplitView>
+</Window>
