@@ -2,12 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Principal.View;
+namespace Principal.Control.StudentControls;
 
-public partial class Student : UserControl
+public partial class StudentSearch : UserControl
 {
-    
-    public Student()
+    public StudentSearch()
     {
         InitializeComponent();
     }

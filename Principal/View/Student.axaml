@@ -2,11 +2,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
+             xmlns:studentControls="using:Principal.Control.StudentControls"
+             xmlns:frameButton="using:Principal.Control.FrameButton"
+             xmlns:data="clr-namespace:Principal.ViewModel"
              x:Class="Principal.View.Student">
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock Foreground="Black">
-            Welcome to Student!    
-        </TextBlock>
+    <UserControl.DataContext>
+        <data:StudentViewModel />
+    </UserControl.DataContext>
+
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White">
+        <frameButton:FrameButton  InsertClick="{Binding InsertClick}"/>
+        <Panel>
+            <Panel IsVisible="{Binding Path=SearchIsVisible}">
+                <studentControls:StudentSearch />
+            </Panel>
+            <Panel IsVisible="{Binding Path=RegisterIsVisible}">
+                <studentControls:StudentRegister />
+            </Panel>
+        </Panel>
+
     </StackPanel>
 </UserControl>

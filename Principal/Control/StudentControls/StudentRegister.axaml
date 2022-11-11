@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:data="clr-namespace:Principal.ViewModel"
+             x:Class="Principal.Control.StudentControls.StudentRegister">
+    <UserControl.DataContext>
+        <data:StudentRegisterViewModel />
+    </UserControl.DataContext>
+
+    <StackPanel>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*">
+            <Grid.Styles>
+                <Style Selector="TextBox">
+                    <Setter Property="Margin" Value="10"/>
+                </Style>
+            </Grid.Styles>
+            <TextBox Watermark="Id"
+                     Text="{Binding Student.Id, Mode=TwoWay}"
+                     Grid.Column="0"
+                     Grid.Row="0" />
+
+            <TextBox Watermark="Name"
+                     Text="{Binding Name, Mode=TwoWay}"
+                     Grid.Column="1"
+                     Grid.Row="0" />
+
+            <TextBox Watermark="Dad"
+                     Text="{Binding Dad, Mode=TwoWay}"
+                     Grid.Column="0"
+                     Grid.Row="1" />
+
+            <TextBox Watermark="Mom"
+                     Text="{Binding Mom, Mode=TwoWay}"
+                     Grid.Column="1"
+                     Grid.Row="1" />
+        </Grid>
+    </StackPanel>
+</UserControl>

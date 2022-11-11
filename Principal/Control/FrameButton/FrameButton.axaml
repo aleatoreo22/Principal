@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="200"
+             x:Name="Base"
+             x:Class="Principal.Control.FrameButton.FrameButton">
+
+    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto">
+        <Grid.Styles>
+            <Style Selector="Button">
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+        </Grid.Styles>
+
+        <Panel Grid.Row="0"
+               Grid.Column="0">
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Left"
+                Spacing="10">
+                <Button Content="🔎 Search" Command="{Binding ElementName=Base,Path=SearchClick}" />
+                <Button Content="🐤 Filter" />
+            </StackPanel>
+        </Panel>
+
+        <Panel Grid.Row="0"
+               Grid.Column="1">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Spacing="10"
+                        IsVisible="True">
+                <Button Content="🆕 Insert" Command="{Binding ElementName=Base,Path=InsertClick}" />
+                <Button Content="🚫 Alter" />
+                <Button Content="🚮 Delete" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Spacing="10"
+                        IsVisible="False">
+                <Button Content="✅ Confirm" />
+                <Button Content="🚫 Cancel" />
+            </StackPanel>
+        </Panel>
+    </Grid>
+</UserControl>

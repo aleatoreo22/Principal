@@ -22,16 +22,25 @@
         <PackageReference Include="Avalonia.Desktop" Version="0.10.14" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.14" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.14" />
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
     </ItemGroup>
     <ItemGroup>
       <UpToDateCheckInput Remove="Control\SidePanel\ButtonSidePanel.axaml" />
+      <UpToDateCheckInput Remove="Control\SandBox\txt.axaml" />
+      <UpToDateCheckInput Remove="Control\Generic\Sandbox\Teste.axaml" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Control" />
-    </ItemGroup>
-    <ItemGroup>
-      <AdditionalFiles Include="Control\SidePanel\ButtonSidePanel.axaml" />
+      <AdditionalFiles Include="Control\SidePanel\ButtonSidePanel\ButtonSidePanel.axaml" />
       <AdditionalFiles Include="Control\SidePanel\SidePanel.axaml" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="Control\ButtonSidePanel\ButtonSidePanel.axaml.cs">
+        <DependentUpon>ButtonSidePanel.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Control\Generic" />
     </ItemGroup>
 </Project>
