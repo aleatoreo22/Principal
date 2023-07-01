@@ -1,5 +1,5 @@
 using System.Windows.Input;
-using Avalonia;
+using Principal.Command;
 
 namespace Principal.ViewModel;
 
@@ -26,5 +26,10 @@ public class StudentViewModel : DefaultNotifyProperty
             if (SetField(ref _searchIsVisible, value))
                 RegisterIsVisible = !value;
         }
+    }
+
+    public int A()
+    {
+        return 0;
     }
 }

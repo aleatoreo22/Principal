@@ -12,7 +12,7 @@
     </UserControl.DataContext>
 
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White">
-        <frameButton:FrameButton  InsertClick="{Binding InsertClick}"/>
+        <frameButton:FrameButton/>
         <Panel>
             <Panel IsVisible="{Binding Path=SearchIsVisible}">
                 <studentControls:StudentSearch />

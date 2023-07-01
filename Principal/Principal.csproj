@@ -30,17 +30,4 @@
       <UpToDateCheckInput Remove="Control\SandBox\txt.axaml" />
       <UpToDateCheckInput Remove="Control\Generic\Sandbox\Teste.axaml" />
     </ItemGroup>
-    <ItemGroup>
-      <AdditionalFiles Include="Control\SidePanel\ButtonSidePanel\ButtonSidePanel.axaml" />
-      <AdditionalFiles Include="Control\SidePanel\SidePanel.axaml" />
-    </ItemGroup>
-    <ItemGroup>
-      <Compile Update="Control\ButtonSidePanel\ButtonSidePanel.axaml.cs">
-        <DependentUpon>ButtonSidePanel.axaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Control\Generic" />
-    </ItemGroup>
 </Project>

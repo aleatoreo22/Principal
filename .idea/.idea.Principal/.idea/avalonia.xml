@@ -27,6 +27,7 @@
         <entry key="Principal/View/Home.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/View/Student.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/View/User.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/teste.axaml" value="Principal/Principal.csproj" />
       </map>
     </option>
   </component>

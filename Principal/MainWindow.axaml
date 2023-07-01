@@ -3,61 +3,89 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:principal="clr-namespace:Principal"
-        xmlns:sidePanel="using:Principal.Control.SidePanel"
         xmlns:view="using:Principal.View"
         xmlns:data="clr-namespace:Principal.ViewModel"
+        xmlns:page="clr-namespace:Principal.Enum"
         x:Name="Base"
         mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
         x:Class="Principal.MainWindow"
         Title="Principal">
 
-    <Window.DataContext>
-        <data:MainWindowViewModel />
-    </Window.DataContext>
+	<Window.DataContext> 
+		<data:MainWindowViewModel />
+	</Window.DataContext>
 
-    <SplitView IsPaneOpen="True"
+	<SplitView IsPaneOpen="{Binding Path=SidePanelIsOpen}"
                DisplayMode="Inline"
                OpenPaneLength="150"
                Name="SplitView1"
                PaneBackground="#171717">
-        <SplitView.Pane>
-            <sidePanel:SidePanel SideButtonClick="ChangePage" />
-        </SplitView.Pane>
-        <Grid Name="GridTela"
+		<SplitView.Pane>
+			<StackPanel Name="StackPanelSidePanel"
+			            HorizontalAlignment="Center"
+			            VerticalAlignment="Top"
+			            Orientation="Vertical">
+				<StackPanel.Styles>
+					<Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter" >
+						<Setter Property="TextBlock.Foreground" Value="White" />
+						<Setter Property="Background" Value="#242424" />
+					</Style>
+					<Style Selector="Button">
+						<Setter Property="Height" Value="45" />
+						<Setter Property="Width" Value="139" />
+						<Setter Property="Margin" Value="0" />
+						<Setter Property="HorizontalContentAlignment" Value="Center" />
+						<Setter Property="VerticalContentAlignment" Value="Center" />
+						<Setter Property="Background" Value="#171717" />
+						<Setter Property="Foreground" Value="White" />
+					</Style>
+				</StackPanel.Styles>
+				<Button Content="🏠 Home" Margin="0,5,0,0" 
+				        Command="{Binding Path=ControlViewIsVisible}" 
+				        CommandParameter="{x:Static page:Page.Home}"/>
+				<Button Content="👨 User"
+				        Command="{Binding Path=ControlViewIsVisible}" 
+				        CommandParameter="{x:Static page:Page.User}"/>
+				<Button Content="🎓 Student" 
+				        Command="{Binding Path=ControlViewIsVisible}" 
+				        CommandParameter="{x:Static page:Page.Student}"/>
+				
+			</StackPanel>
+		</SplitView.Pane>
+		<Grid Name="GridTela"
               ColumnDefinitions="Auto,*"
               RowDefinitions="Auto,*">
-            <StackPanel Grid.Row="0"
+			<StackPanel Grid.Row="0"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         Background="#171717" />
 
-            <Button Name="BtnSidePanelOpen"
-                    Click="BtnSidePanelOpen_OnClick"
-                    Background="#00000000"
+			<Button Background="#00000000"
+                    Command="{Binding Path=ControlSidePanelState}"
                     BorderThickness="0"
                     Grid.Row="0"
                     Grid.Column="0"
                     Foreground="White"
-                    Margin="2">
-                ←
-                <Button.Styles>
-                    <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-                        <Setter Property="BorderThickness" Value="0" />
-                        <Setter Property="Background" Value="#242424" />
-                        <Setter Property="TextBlock.Foreground" Value="White" />
-                    </Style>
-                </Button.Styles>
+                    Margin="2"
+                    Content="{Binding Path=ButtonSidePanelLabel}">
+				<Button.Styles>
+					<Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+						<Setter Property="BorderThickness" Value="0" />
+						<Setter Property="Background" Value="#242424" />
+						<Setter Property="TextBlock.Foreground" Value="White" />
+					</Style>
+				</Button.Styles>
 
-            </Button>
-            <StackPanel Name="Page"
+			</Button>
+			<StackPanel Name="Page"
                         Grid.Row="1"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         Background="#f5f5f5"
                         VerticalAlignment="Stretch"
                         HorizontalAlignment="Stretch">
-                <ContentControl Content="{Binding Path=ActualPage}" />
-            </StackPanel>
-        </Grid>
-    </SplitView>
+				<ContentControl Content="{Binding Path=ActualPageControl}" />
+			</StackPanel>
+		</Grid>
+	</SplitView>
 </Window>
