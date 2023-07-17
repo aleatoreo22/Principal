@@ -9,9 +9,9 @@ using Principal.Model;
 
 namespace Principal.Control.StudentControls;
 
-public partial class StudentRegister : UserControl
+public partial class RegisterStudent : UserControl
 {
-    public StudentRegister()
+    public RegisterStudent()
      {
         InitializeComponent();
     }

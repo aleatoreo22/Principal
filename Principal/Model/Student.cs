@@ -1,15 +1,16 @@
+using System;
+
 namespace Principal.Model;
 
 public class Student
 {
-    public Student(string Id)
+    public Student()
     {
-        if (string.IsNullOrEmpty(Id))
-            return;
+        Id = Guid.NewGuid();
     }
 
     public string Mom { get; set; } = "";
     public string Dad { get; set; } = "";
     public string Name { get; set; } = "";
-    public string Id { get; set; } = "";
+    public Guid Id { get; set; }
 }

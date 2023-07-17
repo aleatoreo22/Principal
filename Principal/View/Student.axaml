@@ -12,13 +12,13 @@
     </UserControl.DataContext>
 
     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White">
-        <frameButton:FrameButton/>
+        <frameButton:FrameButton DataContext="{Binding FrameButtonViewModel}" />
         <Panel>
-            <Panel IsVisible="{Binding Path=SearchIsVisible}">
-                <studentControls:StudentSearch />
+            <Panel IsVisible="{Binding Path=!RegisterIsVisible}"> 
+                <studentControls:SearchStudent DataContext="{Binding SearchStudentViewModel}" />
             </Panel>
             <Panel IsVisible="{Binding Path=RegisterIsVisible}">
-                <studentControls:StudentRegister />
+                <studentControls:RegisterStudent DataContext="{Binding RegisterStudentViewModel}" />
             </Panel>
         </Panel>
 

@@ -4,22 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:data="clr-namespace:Principal.ViewModel"
-             x:Class="Principal.Control.StudentControls.StudentRegister">
+             x:Class="Principal.Control.StudentControls.RegisterStudent">
     <UserControl.DataContext>
-        <data:StudentRegisterViewModel />
+        <data:RegisterStudentViewModel />
     </UserControl.DataContext>
 
     <StackPanel>
         <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*">
             <Grid.Styles>
                 <Style Selector="TextBox">
-                    <Setter Property="Margin" Value="10"/>
+                    <Setter Property="Margin" Value="10" />
                 </Style>
             </Grid.Styles>
             <TextBox Watermark="Id"
-                     Text="{Binding Student.Id, Mode=TwoWay}"
+                     Text="{Binding Student.Id}"
                      Grid.Column="0"
-                     Grid.Row="0" />
+                     Grid.Row="0"
+                     IsReadOnly="True" />
 
             <TextBox Watermark="Name"
                      Text="{Binding Name, Mode=TwoWay}"

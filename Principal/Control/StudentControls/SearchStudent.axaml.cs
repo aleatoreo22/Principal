@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Principal.Control.StudentControls;
 
-public partial class StudentSearch : UserControl
+public partial class SearchStudent : UserControl
 {
-    public StudentSearch()
+    public SearchStudent()
     {
         InitializeComponent();
     }

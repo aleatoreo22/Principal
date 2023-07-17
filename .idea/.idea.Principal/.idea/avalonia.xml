@@ -16,12 +16,15 @@
         <entry key="Principal/Control/SidePanel/ButtonSidePanel.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/Control/SidePanel/ButtonSidePanel/ButtonSidePanel.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/Control/SidePanel/SidePanel.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Control/StudentControls/RegisterStudent.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Control/StudentControls/SearchStudent.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/Control/StudentControls/StudentRegister.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/Control/StudentControls/StudentSearch.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/MainWindow.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/MainWindows.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/Principal.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/Styles/Button.axaml" value="Principal/Principal.csproj" />
+        <entry key="Principal/Styles/DataGrid.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/Styles/Test.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/Styles/TextBox.axaml" value="Principal/Principal.csproj" />
         <entry key="Principal/View/Home.axaml" value="Principal/Principal.csproj" />

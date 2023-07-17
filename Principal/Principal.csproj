@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <!--Avalonia doesen't support TrimMode=link currently,but we are working on that https://github.com/AvaloniaUI/Avalonia/issues/6892 -->
         <TrimMode>copyused</TrimMode>
@@ -29,5 +29,11 @@
       <UpToDateCheckInput Remove="Control\SidePanel\ButtonSidePanel.axaml" />
       <UpToDateCheckInput Remove="Control\SandBox\txt.axaml" />
       <UpToDateCheckInput Remove="Control\Generic\Sandbox\Teste.axaml" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Remove="ViewModel\FrameButonViewModel.cs" />
+      <Compile Update="Control\StudentControls\SearchStudent.axaml.cs">
+        <DependentUpon>StudentSearch.axaml</DependentUpon>
+      </Compile>
     </ItemGroup>
 </Project>

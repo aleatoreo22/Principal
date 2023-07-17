@@ -4,7 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="200"
              x:Name="Base"
+             xmlns:data="clr-namespace:Principal.ViewModel"
              x:Class="Principal.Control.FrameButton.FrameButton">
+    <UserControl.DataContext>
+        <data:FrameButtonViewModel />
+    </UserControl.DataContext>
 
     <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto">
         <Grid.Styles>
@@ -20,7 +24,7 @@
                 Orientation="Horizontal"
                 HorizontalAlignment="Left"
                 Spacing="10">
-                <Button Content="🔎 Search" />
+                <Button Content="🔎 Search" Command="{Binding SearchFunc}" />
                 <Button Content="🐤 Filter" />
             </StackPanel>
         </Panel>
@@ -30,17 +34,17 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         Spacing="10"
-                        IsVisible="True">
-                <Button Content="🆕 Insert"/>
-                <Button Content="🚫 Alter"  />
-                <Button Content="🚮 Delete" />
+                        IsVisible="{Binding !ConfirmFrameIsVisible}">
+                <Button Content="🆕 Insert" Command="{Binding InsertFunc}" />
+                <Button Content="🚫 Alter" Command="{Binding AlterFunc}" />
+                <Button Content="🚮 Delete" Command="{Binding DeleteFunc}" />
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         Spacing="10"
-                        IsVisible="False">
-                <Button Content="✅ Confirm" />
-                <Button Content="🚫 Cancel" />
+                        IsVisible="{Binding ConfirmFrameIsVisible}">
+                <Button Content="✅ Confirm" Command="{Binding ConfirmFunc}" />
+                <Button Content="🚫 Cancel" Command="{Binding CancelFunc}" />
             </StackPanel>
         </Panel>
     </Grid>

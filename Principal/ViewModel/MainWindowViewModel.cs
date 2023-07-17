@@ -27,40 +27,28 @@ public class MainWindowViewModel : DefaultNotifyProperty
     public Avalonia.Controls.Control? ActualPageControl
     {
         get => _actualPageControl;
-        set
-        {
-            SetField(ref _actualPageControl, value);
-        }
+        set => SetField(ref _actualPageControl, value);
     }
 
     private Page _actualPage;
     public Page ActualPage
     {
         get => _actualPage;
-        set
-        {
-            SetField(ref _actualPage, value);
-        }
+        set => SetField(ref _actualPage, value);
     }
     
     private string _buttonSidePanelLabel = "←";
     public string ButtonSidePanelLabel
     {
         get => _buttonSidePanelLabel;
-        set
-        {
-            SetField(ref _buttonSidePanelLabel, value);
-        }
+        set => SetField(ref _buttonSidePanelLabel, value);
     }
 
     private bool _sidePanelIsOpen = true;
     public bool SidePanelIsOpen
     {
         get => _sidePanelIsOpen;
-        set
-        {
-            SetField(ref _sidePanelIsOpen, value);
-        }
+        set => SetField(ref _sidePanelIsOpen, value);
     }
 
     public void ControlSidePanelState()
